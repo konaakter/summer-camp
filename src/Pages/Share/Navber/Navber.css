@@ -1,0 +1,41 @@
+.navigation-menu {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  li {
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+    
+  }
+  
+  li:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s;
+    
+  }
+  
+  li.active:before {
+    width: 100%;
+  }
+  
+  li:hover {
+    color: #f00;
+  }
+  
