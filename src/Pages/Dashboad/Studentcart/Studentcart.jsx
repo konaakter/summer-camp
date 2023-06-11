@@ -1,11 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../Provider/Authprovider';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
+import Studentcartcad from './Studentcartcad';
 
 const Studentcart = () => {
     const { user } = useContext(AuthContext)
+   
     
+
 
 
 
@@ -17,6 +21,10 @@ const Studentcart = () => {
 
         },
     })
+
+
+
+
     const total = sletedclass.reduce((sum, sletedclass) => sletedclass.price + sum, 0);
     const handleremove = sletedclass => {
         Swal.fire({
@@ -51,7 +59,7 @@ const Studentcart = () => {
             <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
                 <h3 className="text-3xl">Total Class: {sletedclass.length}</h3>
                 <h3 className="text-3xl">Total Price: ${total}</h3>
-                <button className="btn btn-warning btn-sm">PAY</button>
+                <Link to='/dashboad/payment'> <button className="btn btn-warning btn-sm">PAY</button></Link>
             </div>
             <div className="overflow-x-auto w-full">
                 <table className="table">
@@ -73,59 +81,12 @@ const Studentcart = () => {
                     <tbody>
                         {
                             sletedclass.map((sletedclass, index) =>
-                                <tr>
-                                    <th>
-                                        <label>
-                                            {
-                                                index + 1
-                                            }
-
-                                        </label>
-                                    </th>
-                                    <td>
-
-                                        <div className="flex items-center space-x-3">
-                                            <div className="avatar">
-                                                <div className="mask mask-squircle w-12 h-12">
-                                                    <img src="https://images.pexels.com/photos/2662816/pexels-photo-2662816.jpeg?auto=compress&cs=tinysrgb&w=600" />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="font-bold">
-                                                    {
-                                                        sletedclass.artCraftName
-                                                    }
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        {
-                                            sletedclass.price
-                                        }
-                                    </td>
-                                    <td>
-                                        {
-                                            sletedclass.totalSeats
-                                        }
-                                    </td>
-                                    <th>
-                                        <button onClick={() => handleremove(sletedclass)} className="btn btn-circle">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                                        </button>
-                                    </th>
-                                    <th>
-                                        <button className="btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                                            Pay
-                                        </button>
-                                    </th>
-
-
-                                </tr>
-
+                               
+                                  <Studentcartcad
+                                  sletedclass={sletedclass}
+                                  index={index}
+                                  handleremove={handleremove}
+                                  ></Studentcartcad>
                             )
                         }
                     </tbody>
@@ -142,6 +103,7 @@ const Studentcart = () => {
 
                 </table>
             </div>
+            
         </div>
     );
 };

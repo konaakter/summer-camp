@@ -9,6 +9,8 @@ import Allusers from '../Pages/Dashboad/Allusers/Allusers';
 import AllClasss from '../Pages/Dashboad/AllClasss/AllClasss';
 import ApproveClass from '../Pages/ApproveClass/ApproveClass';
 import Studentcart from '../Pages/Dashboad/Studentcart/Studentcart';
+import Bokingclass from '../Pages/Dashboad/Bokingclass/Bokingclass';
+
 
 const router = createBrowserRouter([
   {
@@ -34,24 +36,35 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/dashboad",
+    path: "dashboad",
     element: <Dashboard></Dashboard>,
     children: [
       {
-        path: "/dashboad/allusers",
+        path: "allusers",
         element: <Allusers></Allusers>,
       },
       {
-        path: "/dashboad/allclass",
+        path: "allclass",
         element: <AllClasss></AllClasss>
       },
       {
-        path: "/dashboad/mycart",
+        path: "mycart",
         element: <Studentcart></Studentcart>
       },
+      {
+        path: "Bokingclass",
+        element: <Bokingclass></Bokingclass>
+      },
+      
     ],
   },
 
 ]);
 
 export default router;
+/*
+ {
+        path: "payment",
+        element: <Payment></Payment>
+      },
+      */
