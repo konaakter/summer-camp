@@ -30,14 +30,12 @@ const Dashboard = () => {
 
                         </> : isInstractor ?
 
-
-
                             <>
                                 <li><NavLink to="/dashboad/home"><FaHome></FaHome> Instractor </NavLink></li>
                                 <li><NavLink to="/dashboad/reservations"><FaCalendarAlt></FaCalendarAlt> Reservations</NavLink></li>
-                                <li><NavLink to="Bokingclass"><FaWallet></FaWallet> Booking Class</NavLink></li>
+                                <li><NavLink to="/dashboad/myaddclass"><FaWallet></FaWallet> My added Class</NavLink></li>
                                 <li>
-                                    <NavLink to="/dashboad/Addclass"><FaShoppingCart></FaShoppingCart> My class add
+                                    <NavLink to="/dashboad/Addclass"><FaShoppingCart></FaShoppingCart> Class add
                                         <span className="badge inl badge-secondary"></span>
                                     </NavLink>
 

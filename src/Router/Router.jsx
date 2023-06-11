@@ -11,6 +11,7 @@ import ApproveClass from '../Pages/ApproveClass/ApproveClass';
 import Studentcart from '../Pages/Dashboad/Studentcart/Studentcart';
 import Bokingclass from '../Pages/Dashboad/Bokingclass/Bokingclass';
 import Addclass from '../Pages/Dashboad/Instractor/Addclass/Addclass';
+import Inastractorclass from '../Pages/Dashboad/Instractor/Inastractorclass/Inastractorclass';
 
 
 const router = createBrowserRouter([
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "Addclass",
         element: <Addclass></Addclass>
+      },
+      {
+        path: "myaddclass",
+        element: <Inastractorclass></Inastractorclass>
       },
       
     ],
