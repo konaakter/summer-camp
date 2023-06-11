@@ -19,7 +19,7 @@ const Allusers = () => {
     })
 
 
-    const handleMakeAdmin = user =>{
+    const handleAdmin = user =>{
         fetch(`http://localhost:5000/users/admin/${user._id}`, {
             method: 'PATCH'
         })
@@ -32,6 +32,28 @@ const Allusers = () => {
                     position: 'top-end',
                     icon: 'success',
                     title: `${user.name} is an Admin Now!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
+    }
+
+
+
+    const handleinstractor = user =>{
+        fetch(`http://localhost:5000/users/instractor/${user._id}`, {
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount){
+                refetch();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${user.name} is an Instractor Now!`,
                     showConfirmButton: false,
                     timer: 1500
                   })
@@ -64,9 +86,13 @@ const Allusers = () => {
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
                                     <td>{user.role === 'admin' ? 'admin' :
-                                        <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white"><FaUserShield></FaUserShield></button>
+                                        <button onClick={() => handleAdmin(user)} className="btn btn-ghost bg-orange-600  text-white"><FaUserShield></FaUserShield></button>
                                     }</td>
-                                    <td><button className="btn btn-ghost bg-red-600  text-white">Instractor</button></td>
+                                    <td>
+                                    {user.role === 'instractor' ? 'instractor' :
+                                        <button onClick={() => handleinstractor(user)} className="btn btn-ghost bg-red-600  text-white">Instractor
+                                    </button>}
+                                    </td>
                                 </tr>)
                             }
 

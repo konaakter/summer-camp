@@ -10,6 +10,7 @@ import AllClasss from '../Pages/Dashboad/AllClasss/AllClasss';
 import ApproveClass from '../Pages/ApproveClass/ApproveClass';
 import Studentcart from '../Pages/Dashboad/Studentcart/Studentcart';
 import Bokingclass from '../Pages/Dashboad/Bokingclass/Bokingclass';
+import Addclass from '../Pages/Dashboad/Instractor/Addclass/Addclass';
 
 
 const router = createBrowserRouter([
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "Bokingclass",
         element: <Bokingclass></Bokingclass>
+      },
+      {
+        path: "Addclass",
+        element: <Addclass></Addclass>
       },
       
     ],
