@@ -1,5 +1,6 @@
 .bg-img{
-    background-image: url(../../../img/summercam.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.685),rgba(0, 0, 0, 0.685)), url('https://img.freepik.com/free-photo/children-playing-grass_1098-504.jpg?w=740&t=st=1686226687~exp=1686227287~hmac=cce0ab2e556c7becc7da46f4de3d353d1ce71328d3708e5497a8184c1a76603d');
     background-repeat: no-repeat;
     background-size: cover;
+    height: 500px;
 }

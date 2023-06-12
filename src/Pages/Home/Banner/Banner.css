@@ -1,4 +1,26 @@
 .heg{
-    height: 500px;
+    height: 800px;
     
 }
+
+.bgimg{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.685),rgba(0, 0, 0, 0.685)),url('https://img.freepik.com/free-photo/camping-tents-pine-trees-with-sunlight-pang-ung-lake-mae-hong-son-thailand_335224-929.jpg?w=740&t=st=1686570112~exp=1686570712~hmac=2d7c810332b38452ed30870b2a13003656e44305fa5ba1140cd03898fc051366');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    height: 100vh;
+  }
+  .bgimg1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.685),rgba(0, 0, 0, 0.685)),url('https://img.freepik.com/free-photo/camping-tents-pine-trees-with-sunlight-pang-ung-lake-mae-hong-son-thailand_335224-929.jpg?w=740&t=st=1686570112~exp=1686570712~hmac=2d7c810332b38452ed30870b2a13003656e44305fa5ba1140cd03898fc051366');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    height: 100vh;
+  }
+  .bgimg2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.685),rgba(0, 0, 0, 0.685)),url('https://img.freepik.com/free-photo/camping-tents-pine-trees-with-sunlight-pang-ung-lake-mae-hong-son-thailand_335224-929.jpg?w=740&t=st=1686570112~exp=1686570712~hmac=2d7c810332b38452ed30870b2a13003656e44305fa5ba1140cd03898fc051366');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    height: 100vh;
+  }

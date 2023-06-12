@@ -13,7 +13,7 @@ import './Banner.css'
 const Banner = () => {
 
     return (
-        <section>
+        <section className=" " >
             <>
                 <Swiper
                     spaceBetween={30}
@@ -27,17 +27,61 @@ const Banner = () => {
                     }}
                     navigation={true}
                     modules={[Autoplay, Pagination, Navigation]}
-                    className="mySwiper heg mb-28"
+                    className="mySwiper  mb-28"
                 >
                     <SwiperSlide >
-                    <figure><img className=" w-full " 
-                    src="https://img.freepik.com/free-photo/children-playing-grass_1098-504.jpg?w=740&t=st=1686226687~exp=1686227287~hmac=cce0ab2e556c7becc7da46f4de3d353d1ce71328d3708e5497a8184c1a76603d " alt="" srcset="" /></figure>
+
+                        <div className=" bgimg1">
+                            <div className=" text-center pt-44 font-sans space-y-6">
+                                <h1 className=" text-4xl font-bold text-stone-100 ">
+                                    NEW CAMPING SEASON <br /> <span className=" text-green-500"> IS STARTING IN MAY!</span>
+
+
+                                </h1>
+                                <p className=" text-gray-100 w-1/2 mx-auto">Globally incubate standards compliant channels before scalable benefits. Quickly disseminate superior deliverables whereas web-enabled applications. Quickly drive clicks-and-mortar catalysts for change before vertical architectures.</p>
+                                <button class="border border-green-500 text-white font-semibold py-2 px-4 rounded focus:outline-none hover:bg-green-500 hover:text-white">
+                                    Read more Us
+                                </button>
+                                <button class="border ms-8 border-orange-400 text-white 
+                                font-semibold py-2 px-4 rounded hover:focus:outline-none hover:bg-orange-400 ">Views Timetable</button>
+                            </div>
+
+                        </div>
                     </SwiperSlide>
-                    <SwiperSlide><img className=" w-full " src=" https://img.freepik.com/free-photo/group-girls-camping-forest_1303-9509.jpg?w=740&t=st=1686227638~exp=1686228238~hmac=0fcae5327d37de8970dd55809bd947c6e50faf8611ffb9564d14cfe5d824a24c" alt="" srcset="" /></SwiperSlide>
-                    <SwiperSlide><img src="" alt="" srcset="" /></SwiperSlide>
-                    <SwiperSlide><img src="" alt="" /></SwiperSlide>
-                    <SwiperSlide><img src="" alt="" /></SwiperSlide>
-                    
+                    <SwiperSlide>
+                        <div className=" bgimg2">
+                            <div className=" text-center pt-44 font-sans space-y-6">
+                                <h1 className=" text-4xl font-bold text-stone-100 ">
+                                    NEW CAMPING SEASON <br /> <span className=" text-green-500"> IS STARTING IN MAY!</span>
+
+
+                                </h1>
+                                <p className=" text-gray-100 w-1/2 mx-auto">Globally incubate standards compliant channels before scalable benefits. Quickly disseminate superior deliverables whereas web-enabled applications. Quickly drive clicks-and-mortar catalysts for change before vertical architectures.</p>
+                                <button class="border border-green-500 text-white font-semibold py-2 px-4 rounded focus:outline-none hover:bg-green-500 hover:text-white">
+                                    Read more Us
+                                </button>
+                                <button class="border ms-8 border-orange-400 text-white font-semibold py-2 px-4 rounded focus:outline-none hover:bg-orange-400 hover:text-white">Views Timetable</button>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="bgimg" >
+                            <div className=" text-center pt-44 font-sans space-y-6">
+                                <h1 className=" text-4xl font-bold text-stone-100 ">
+                                    NEW CAMPING SEASON <br /> <span className=" text-green-500"> IS STARTING IN MAY!</span>
+
+
+                                </h1>
+                                <p className=" text-gray-100 w-1/2 mx-auto">Globally incubate standards compliant channels before scalable benefits. Quickly disseminate superior deliverables whereas web-enabled applications. Quickly drive clicks-and-mortar catalysts for change before vertical architectures.</p>
+                                <button class="border border-green-500 text-white font-semibold py-2 px-4 rounded focus:outline-none hover:bg-green-500 hover:text-white">
+                                    Read more Us
+                                </button>
+                                <button class="border ms-8 border-orange-400 text-white font-semibold py-2 px-4 rounded focus:outline-none hover:bg-orange-400 hover:text-white">Views Timetable</button>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+
+
                 </Swiper>
             </>
         </section>
