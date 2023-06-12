@@ -12,12 +12,14 @@ import Studentcart from '../Pages/Dashboad/Studentcart/Studentcart';
 import Bokingclass from '../Pages/Dashboad/Bokingclass/Bokingclass';
 import Addclass from '../Pages/Dashboad/Instractor/Addclass/Addclass';
 import Inastractorclass from '../Pages/Dashboad/Instractor/Inastractorclass/Inastractorclass';
+import Eroorpage from '../Pages/Eroorpage/Eroorpage';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement : <Eroorpage></Eroorpage>,
     children: [
       {
         path: "/",
