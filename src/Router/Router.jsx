@@ -13,6 +13,7 @@ import Bokingclass from '../Pages/Dashboad/Bokingclass/Bokingclass';
 import Addclass from '../Pages/Dashboad/Instractor/Addclass/Addclass';
 import Inastractorclass from '../Pages/Dashboad/Instractor/Inastractorclass/Inastractorclass';
 import Uadateclass from '../Pages/Dashboad/Instractor/Inastractorclass/Uadateclass';
+import Feeback from '../Pages/Dashboad/Instractor/Feddback/Feeback';
 
 
 const router = createBrowserRouter([
@@ -66,8 +67,8 @@ const router = createBrowserRouter([
         path: "myaddclass",
         element: <Inastractorclass></Inastractorclass>
       },
-     
       
+     
     ],
   },
 

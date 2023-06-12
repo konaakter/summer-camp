@@ -10,7 +10,7 @@ const Bokingclass = () => {
     const { refetch, data: payments = [] } = useQuery({
         queryKey: ['payments ', user?.email],
         queryFn: async () => {
-            const response = await fetch(`http://localhost:5000/payments?email=${user?.email}`)
+            const response = await fetch(`https://summer-camp-server-navy-omega.vercel.app/payments?email=${user?.email}`)
             return response.json()
 
         },

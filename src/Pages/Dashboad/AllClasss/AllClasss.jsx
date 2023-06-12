@@ -19,7 +19,7 @@ const AllClasss = () => {
     })
 
     const handleapprove = allcllass => {
-        fetch(`http://localhost:5000/allcllass/approve/${allcllass._id}`, {
+        fetch(`https://summer-camp-server-navy-omega.vercel.app/allcllass/approve/${allcllass._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -40,7 +40,7 @@ const AllClasss = () => {
 
 
     const handleDeny = allcllass => {
-        fetch(`http://localhost:5000/allcllass/deny/${allcllass._id}`, {
+        fetch(`https://summer-camp-server-navy-omega.vercel.app/allcllass/deny/${allcllass._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -73,7 +73,7 @@ const AllClasss = () => {
         if (text) {
             const feed =  text
 
-            fetch(`http://localhost:5000/allcllass/feedback/${allcllass._id}`, {
+            fetch(`https://summer-camp-server-navy-omega.vercel.app/allcllass/feedback/${allcllass._id}`, {
                 method: 'PATCH', 
                 headers: {
                     'content-type': 'application/json'

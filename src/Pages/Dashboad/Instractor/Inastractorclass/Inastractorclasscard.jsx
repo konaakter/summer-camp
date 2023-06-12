@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import Uadateclass from './Uadateclass';
 
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
 const Inastractorclasscard = ({ addclass }) => {
 
     const [isOpen, setIsOpen] = useState(false)
@@ -8,15 +11,26 @@ const Inastractorclasscard = ({ addclass }) => {
         setIsOpen(false)
     }
 
+    
+
     const [uapdateInfo, setuapdateInfo] = useState({
         artCraftName: addclass.artCraftName,
         _id: addclass._id,
         price: addclass.price,
         totalSeats: addclass.totalSeats
     })
+    
 
+    const sowFeedback = feedback=>{
+        Swal.fire({
+            title: 'Feedback',
+            text: feedback,
+          })
+    }
+    
 
     return (
+        <div>
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <figure><img src="https://images.pexels.com/photos/61129/pexels-photo-61129.jpeg?auto=compress&cs=tinysrgb&w=600" /></figure>
@@ -44,7 +58,7 @@ const Inastractorclasscard = ({ addclass }) => {
                         <div >
 
                             {addclass.status === 'Deny' &&
-                                <button className="badge badge-outline">Feedback</button>
+                               <button className="badge badge-outline" onClick={()=>sowFeedback(addclass.feedback)}>Feedback</button>
                             }
 
                         </div>
@@ -56,6 +70,8 @@ const Inastractorclasscard = ({ addclass }) => {
                 isOpen={isOpen}
                 closeModal={closeModal}
             ></Uadateclass>
+        </div>
+        
         </div>
     );
 };

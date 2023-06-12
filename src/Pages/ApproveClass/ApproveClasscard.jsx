@@ -13,7 +13,7 @@ const ApproveClasscard = ({ approveclass, refetch }) => {
         if (user && user.email) {
             const classcard = { approveclassId: _id, image, artCraftName, price, totalSeats, bookSeats, instructorName, instructorEmail, email: user.email }
 
-            fetch('http://localhost:5000/sletedclass', {
+            fetch('https://summer-camp-server-navy-omega.vercel.app/sletedclass', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

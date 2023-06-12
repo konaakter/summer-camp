@@ -15,7 +15,7 @@ const Socallogin = () => {
                 const gogle = result.user
                 console.log(gogle);
                 const saveUser = { name:  gogle.displayName, email:  gogle.email }
-                fetch('http://localhost:5000/users', {
+                fetch('https://summer-camp-server-navy-omega.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

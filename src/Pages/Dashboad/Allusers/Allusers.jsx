@@ -20,7 +20,7 @@ const Allusers = () => {
 
 
     const handleAdmin = user =>{
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://summer-camp-server-navy-omega.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -42,7 +42,7 @@ const Allusers = () => {
 
 
     const handleinstractor = user =>{
-        fetch(`http://localhost:5000/users/instractor/${user._id}`, {
+        fetch(`https://summer-camp-server-navy-omega.vercel.app/users/instractor/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())

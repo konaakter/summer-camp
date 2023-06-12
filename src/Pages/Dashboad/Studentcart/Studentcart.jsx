@@ -16,7 +16,7 @@ const Studentcart = () => {
     const { refetch, data: sletedclass = [] } = useQuery({
         queryKey: ['sletedclass ', user?.email],
         queryFn: async () => {
-            const response = await fetch(`http://localhost:5000/sletedclass?email=${user?.email}`)
+            const response = await fetch(`https://summer-camp-server-navy-omega.vercel.app/sletedclass?email=${user?.email}`)
             return response.json()
 
         },
@@ -37,7 +37,7 @@ const Studentcart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/sletedclass/${sletedclass._id}`, {
+                fetch(`https://summer-camp-server-navy-omega.vercel.app/sletedclass/${sletedclass._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

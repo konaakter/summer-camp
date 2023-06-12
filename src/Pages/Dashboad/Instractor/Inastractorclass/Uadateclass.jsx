@@ -20,7 +20,7 @@ const Uadateclass = ({ uapdateInfo, isOpen, closeModal }) => {
         const addclass = {artCraftName: artCraftName, price: price,  totalSeats: parseInt(totalSeats) }
         console.log(addclass )
 
-        fetch(`http://localhost:5000/addclas/${uapdateInfo._id}`, {
+        fetch(`https://summer-camp-server-navy-omega.vercel.app/addclas/${uapdateInfo._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
