@@ -17,7 +17,7 @@ const Register = () => {
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photo)
                 .then(() => {
-                    const saveUser = { name: data.name, email: data.email }
+                    const saveUser = { name: data.name, email: data.email, image: data.image }
                     fetch('https://summer-camp-server-navy-omega.vercel.app/users', {
                         method: 'POST',
                         headers: {
@@ -59,7 +59,7 @@ const Register = () => {
                             </div>
                             <div className="form-control">
                                 
-                                <input {...register("photo", { required: true })} className='  py-2 rounded border-none outline-none' placeholder='Photo URL' type="text" name="photo" id="" />
+                                <input {...register("image", { required: true })} className='  py-2 rounded border-none outline-none' placeholder='Photo URL' type="text" name="photo" id="" />
                                 <label className=' border-b-2'></label>
                                 {errors.photo && <span>This field is required</span>}
                             </div>
