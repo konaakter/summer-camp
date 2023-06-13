@@ -64,24 +64,27 @@ const ApproveClasscard = ({ approveclass, refetch }) => {
 
 
     return (
+        <div >
         <div className=' relative text-white'>
             <div className=''>
                 <img
                     src={approveclass.photo}
                     alt=''
-                    className=' object-cover w-full h-56 md:h-64 xl:h-96  rounded-2xl'
+                    className=' object-cover w-full h-56 md:h-64 xl:h-96   rounded-2xl'
                 />
 
 
             </div>
 
-            <div className=' absolute w-full ps-6 pb-40 inset-x-0 bottom-0 h-36  bg-opacity-40  bg-black space-y-5  '>
+            <div className= {`absolute w-full ps-6 pb-40 inset-x-0 bottom-0 h-36  bg-opacity-40 
+             bg-black space-y-5 ${totalSeats == bookSeats ? 'bg-red-500 bg-opacity-95' : ''}`}>
                 <h1 className='  uppercase text-2xl'>{approveclass.artCraftName}</h1>
+                <h1 className='  uppercase text-1xl'>{approveclass.instructorName}</h1>
                 <div className=' flex gap-6  '>
-                    <p>Price: {approveclass.price}</p>
+                    <p>Price: ${approveclass.price}</p>
                     
-                    <p>{approveclass.totalSeats}</p>
-                    <p>{approveclass.bookSeats}</p>
+                    <p>Available seats: {approveclass.totalSeats - approveclass.bookSeats}</p>
+                    
                 </div>
                 
 
@@ -89,6 +92,7 @@ const ApproveClasscard = ({ approveclass, refetch }) => {
             </div>
 
 
+        </div>
         </div>
 
     );
