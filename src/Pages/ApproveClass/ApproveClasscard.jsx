@@ -1,12 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/Authprovider';
 import ApproveClass from './ApproveClass';
+import useAdmin from '../../hooks/useAdmin';
+import useInstractor from '../../hooks/useInstractor';
 
 const ApproveClasscard = ({ approveclass, refetch }) => {
     //const [, refetch] = ApproveClass;
     const { _id, image, artCraftName, price, totalSeats, bookSeats, instructorName, instructorEmail } = approveclass
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
+    const [isAdmin] = useAdmin();
+    const [isInstractor] = useInstractor();
+    const [dasable, setdesable] = useState(false);
+   
+    useEffect(() => {
+        if (totalSeats == bookSeats || isAdmin || isInstractor) {
+            setdesable(true);
+        }
+       },[totalSeats, bookSeats, isAdmin, isInstractor])
+   
 
     const handlesleleted = approveclass => {
         console.log(approveclass);
@@ -22,8 +34,8 @@ const ApproveClasscard = ({ approveclass, refetch }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    if (data.insertedId) { 
-                        refetch() ;
+                    if (data.insertedId) {
+                        refetch();
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -52,23 +64,39 @@ const ApproveClasscard = ({ approveclass, refetch }) => {
 
 
     return (
-        <div className="card w-96 bg-base-100 shadow-xl ">
-            <figure><img src="https://images.pexels.com/photos/8033900/pexels-photo-8033900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">
-                    {
-                        artCraftName
-                    }
+        <div className=' relative text-white'>
+            <div className=''>
+                <img
+                    src={approveclass.photo}
+                    alt=''
+                    className=' object-cover w-full h-56 md:h-64 xl:h-96  rounded-2xl'
+                />
 
-                </h2>
-                <p>{price}</p>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                    <button onClick={() => handlesleleted(approveclass)} className="btn btn-primary">Sletect</button>
-                </div>
+
             </div>
+
+            <div className=' absolute w-full ps-6 pb-40 inset-x-0 bottom-0 h-36  bg-opacity-40  bg-black space-y-5  '>
+                <h1 className='  uppercase text-2xl'>{approveclass.artCraftName}</h1>
+                <div className=' flex gap-6  '>
+                    <p>Price: {approveclass.price}</p>
+                    
+                    <p>{approveclass.totalSeats}</p>
+                    <p>{approveclass.bookSeats}</p>
+                </div>
+                
+
+                <button onClick={() => handlesleleted(approveclass)} disabled={dasable}  className=" px-7 py-3  bg-green-500 ">Sletect</button>
+            </div>
+
+
         </div>
+
     );
 };
 
 export default ApproveClasscard;
+
+
+/*
+
+<button onClick={() => handlesleleted(approveclass)} className="btn btn-primary">Sletect</button>*/

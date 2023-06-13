@@ -28,7 +28,7 @@ const Navber = () => {
     return (
 
         <div className=' '>
-            <div className=" navbar flex bg-base-100  z-10 bg-transparent text-white ">
+            <div className=" navbar flex bg-base-100 absolute z-10 bg-transparent text-white ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -43,6 +43,7 @@ const Navber = () => {
                                 Services</li></Link>
                             <Link to='/approveclass'> <li className={activeIndex === 3 ? 'active' : ''} onClick={() => handleMenuItemClick(3)}>
                                 ALLclass</li></Link>
+
 
                             <p>
                                 {
@@ -77,8 +78,8 @@ const Navber = () => {
                     </div>
 
                 </div>
-                <div className="navbar-center hidden lg:flex   bg-green-500  ">
-                    <ul className=" menu  menu-horizontal pt-0 ">
+                <div className="navbar-center hidden lg:flex   bg-green-500   ">
+                    <ul className=" menu  menu-horizontal pt-0 fixed   bg-green-500  ">
 
                         <Link to='/'> <li className={activeIndex === 0 ? 'active' : ''} onClick={() => handleMenuItemClick(0)}>
                             Home</li> </Link>
@@ -86,9 +87,11 @@ const Navber = () => {
                             login</li></Link>
                         <Link to="/sinup"><li className={activeIndex === 2 ? 'active' : ''} onClick={() => handleMenuItemClick(2)}>
                             Services</li></Link>
-                        <Link to='/approveclass'> <li className={activeIndex === 3 ? 'active' : ''} onClick={() => handleMenuItemClick(3)}>
-                            ALLclass</li></Link>
-
+                        <Link to='/approveclass'>
+                            <li className={activeIndex === 3 ? 'active' : ''} onClick={() => handleMenuItemClick(3)}>
+                                ALLclass</li></Link>
+                        
+                              
                     </ul>
                 </div>
                 <div className="navbar-end hidden lg:flex ">
@@ -109,7 +112,9 @@ const Navber = () => {
                                 : <Link to={'/login'} className=" bg-green-500 px-7 py-3">Login</Link>
                         }
                     </p>
+                    
                 </div>
+                
             </div>
         </div>
 

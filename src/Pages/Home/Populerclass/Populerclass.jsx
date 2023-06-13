@@ -42,7 +42,7 @@ const Populerclass = () => {
                                 <img src={allclass.photo} alt=" " className="rounded-xl" />
                             </figure>
                             <div className=' bg-orange-400 m-6   transform hover:-translate-y-16 '>
-                                <div className="card-body items-center text-center space-y-2   ">
+                                <div className="card-body items-center text-center  ">
                                     <h2 className="card-title"> Class Name: {allclass.artCraftName}</h2>
                                     <div className=' flex gap-6'>
                                         <p>Price: {allclass.price}</p>

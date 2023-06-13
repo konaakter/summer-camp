@@ -13,6 +13,7 @@ import Bokingclass from '../Pages/Dashboad/Bokingclass/Bokingclass';
 import Addclass from '../Pages/Dashboad/Instractor/Addclass/Addclass';
 import Inastractorclass from '../Pages/Dashboad/Instractor/Inastractorclass/Inastractorclass';
 import Eroorpage from '../Pages/Eroorpage/Eroorpage';
+import Allinstractor from '../Pages/Allinstractor/Allinstractor';
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/approveclass",
         element: <ApproveClass></ApproveClass>,
+      },
+      {
+        path: "/ser",
+        element: <Allinstractor></Allinstractor>,
       },
       {
         path: "/login",

@@ -22,8 +22,9 @@ const ApproveClass = () => {
 
     
     return (
+        <div>
 
-        <div className=' grid grid-cols-3 gap-10 container mx-auto '>
+        <div className=' grid grid-cols-3 gap-10 container mx-auto pt-36 py-20 '>
             {
                 approveclass.map(approveclass =>
                     <ApproveClasscard
@@ -37,6 +38,7 @@ const ApproveClass = () => {
             }
 
 
+        </div>
         </div>
     );
 };
