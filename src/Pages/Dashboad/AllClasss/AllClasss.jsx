@@ -100,7 +100,7 @@ const AllClasss = () => {
     }
 
     return (
-        <div className=' grid grid-cols-2 gap-10 my-20'>
+        <div className=' grid grid-cols-2 gap-10'>
             {
                 allcllass.map((allcllass, index) =>
 

@@ -23,7 +23,7 @@ const ApproveClass = () => {
     
     return (
 
-        <div className=' grid grid-cols-3 gap-10 container mx-auto my-24'>
+        <div className=' grid grid-cols-3 gap-10 container mx-auto '>
             {
                 approveclass.map(approveclass =>
                     <ApproveClasscard

@@ -9,15 +9,19 @@ const Register = () => {
     const { createUser, updateUserProfile} = useContext(AuthContext)
     const { register, handleSubmit,  reset,  watch, formState: { errors } } = useForm();
     const onSubmit = data => {
+        console.log(data.name, data.image)
         reset();
         console.log(data);
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                updateUserProfile(data.name, data.photo)
+                console.log(data.name, data.photo)
+                const { photo} = data;
+                updateUserProfile(data.name, photo)
                 .then(() => {
-                    const saveUser = { name: data.name, email: data.email, image: data.image }
+                    const saveUser = { name: data.name, email: data.email, photo}
+
                     fetch('https://summer-camp-server-navy-omega.vercel.app/users', {
                         method: 'POST',
                         headers: {
@@ -59,7 +63,7 @@ const Register = () => {
                             </div>
                             <div className="form-control">
                                 
-                                <input {...register("image", { required: true })} className='  py-2 rounded border-none outline-none' placeholder='Photo URL' type="text" name="photo" id="" />
+                                <input {...register("photo", { required: true })} className='  py-2 rounded border-none outline-none' placeholder='Photo URL' type="text" name="photo" id="" />
                                 <label className=' border-b-2'></label>
                                 {errors.photo && <span>This field is required</span>}
                             </div>
