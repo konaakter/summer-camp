@@ -22,9 +22,19 @@ const ApproveClass = () => {
 
     
     return (
-        <div>
+        <div className=' pt-36 py-20'>
+            <div className="mx-auto text-center md:w-4/12 mb-10">
+                    <div className='  '>
+                        <hr />
 
-        <div className=' grid grid-cols-3 gap-10 container mx-auto pt-36 py-20 '>
+                        <p className=" mb-2 uppercase"> Acitivies</p>
+                        <hr />
+                    </div>
+
+                    <h1 className="text-3xl uppercase text-green-500  py-4">Our Activites</h1>
+                </div>
+
+        <div className=' grid grid-cols-3 gap-10 container mx-auto '>
             {
                 approveclass.map(approveclass =>
                     <ApproveClasscard

@@ -78,8 +78,9 @@ const Navber = () => {
                     </div>
 
                 </div>
-                <div className="navbar-center hidden lg:flex   bg-green-500   ">
-                    <ul className=" menu  menu-horizontal pt-0 fixed   bg-green-500  ">
+                <div className="navbar-center hidden lg:flex   bg-green-500 border rounded-2xl  ">
+                    <ul className=" menu  menu-horizontal pt-0 fixed   bg-green-500 border  border-green-500 
+                    rounded-3xl">
 
                         <Link to='/'> <li className={activeIndex === 0 ? 'active' : ''} onClick={() => handleMenuItemClick(0)}>
                             Home</li> </Link>
@@ -90,6 +91,9 @@ const Navber = () => {
                         <Link to='/approveclass'>
                             <li className={activeIndex === 3 ? 'active' : ''} onClick={() => handleMenuItemClick(3)}>
                                 ALLclass</li></Link>
+                                <Link to='/ser'>
+                            <li className={activeIndex === 4 ? 'active' : ''} onClick={() => handleMenuItemClick(4)}>
+                                ALL Inastractor</li></Link>
                         
                               
                     </ul>

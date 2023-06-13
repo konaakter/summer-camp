@@ -77,7 +77,7 @@ const ApproveClasscard = ({ approveclass, refetch }) => {
             </div>
 
             <div className= {`absolute w-full ps-6 pb-40 inset-x-0 bottom-0 h-36  bg-opacity-40 
-             bg-black space-y-5 ${totalSeats == bookSeats ? 'bg-red-500 bg-opacity-95' : ''}`}>
+             bg-black space-y-2 ${totalSeats == bookSeats ? 'bg-red-500 bg-opacity-95' : ''}`}>
                 <h1 className='  uppercase text-2xl'>{approveclass.artCraftName}</h1>
                 <h1 className='  uppercase text-1xl'>{approveclass.instructorName}</h1>
                 <div className=' flex gap-6  '>
