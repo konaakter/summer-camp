@@ -33,9 +33,9 @@ const Login = () => {
             .catch(error => console.log(error))
     }
     return (
-        <div>
-            <div className='container mx-auto'>
-                <div className=' lg:flex lg:gap-40 '>
+        <div className='bg   '>
+            <div className='    mx-auto pt-28 '>
+                <div className=' lg:flex lg:gap-40 justify-center  bg-transparent '>
                     <div data-aos="zoom-in-down" className=' border lg:w-3/12 w-4/5 lg:mx-0 mx-auto  pt-7 pb-7 px-7 my-11  '>
                         <h2 className='text-2xl text-bold mb-4 text-center'>Login</h2>
                         <form className=' mt-8' onSubmit={handleSubmit(onSubmit)}>
@@ -60,7 +60,7 @@ const Login = () => {
                                 {errors.password && <span>This field is required</span>}
                             </div>
                             <div className=' mt-10'>
-                            <button className="btn btn-wide bg-cyan-400 border-white mt-6"> <Link>Login</Link></button>
+                            <button className="btn btn-wide bg-green-400 border-white mt-6"> <Link>Login</Link></button>
                             </div>
                            
 
@@ -69,7 +69,7 @@ const Login = () => {
 
                         </form>
                         <p className=''> <small>New to this website ? please
-                            <Link className=' text-cyan-400 underline' to='/sinup'>Register</Link></small></p>
+                            <Link className='text-green-400  underline' to='/sinup'>Register</Link></small></p>
                     </div>
                     <div>
 

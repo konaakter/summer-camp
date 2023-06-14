@@ -6,7 +6,7 @@ import { FaBeer, FaFacebookF, FaInstagram, FaPhone, FaTwitter, FaHouzz, FaRegEnv
 const Fotter = () => {
 
     return (
-        <div className=' bg-img mt-20'>
+        <div className=' bg-img '>
             <div className='container mx-auto'>
                 <div className=' w-1/4	 mx-auto pt-16'>
                     <img className=' h-28 w-60' src={logo} alt="" />
