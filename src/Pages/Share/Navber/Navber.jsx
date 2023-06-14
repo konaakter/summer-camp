@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Navber.css';
 import img1 from '../../../img/8053802.png'
 import { Link } from 'react-router-dom';
@@ -9,6 +9,32 @@ import { AuthContext } from '../../../Provider/Authprovider';
 
 const Navber = () => {
     const { user, logOut } = useContext(AuthContext)
+
+   
+    const [theme, setTheme] = useState(
+        localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+    );
+
+   
+    const handleToggle = (e) => {
+        if (e.target.checked) {
+            setTheme("dark");
+        } else {
+            setTheme("light");
+        }
+    };
+
+    
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
+        const localTheme = localStorage.getItem("theme");
+      
+        document.querySelector("html").setAttribute("data-theme", localTheme);
+    }, [theme]);
+
+
+
+
 
     const handlelogout = () => {
         logOut()
@@ -35,20 +61,20 @@ const Navber = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-orange-400 bg-opacity-50 rounded-box w-52">
-                        <Link to='/'> <li className={activeIndex === 0 ? 'active' : ''} onClick={() => handleMenuItemClick(0)}>
-                            Home</li> </Link>
+                            <Link to='/'> <li className={activeIndex === 0 ? 'active' : ''} onClick={() => handleMenuItemClick(0)}>
+                                Home</li> </Link>
                             {
                                 user && <Link to='/dashboad'> <li className={activeIndex === 1 ? 'active' : ''} onClick={() => handleMenuItemClick(1)}>
-                                Dashbord</li></Link>
-                           
+                                    Dashbord</li></Link>
+
                             }
-                        
-                        <Link to='/approveclass'>
-                            <li className={activeIndex === 2 ? 'active' : ''} onClick={() => handleMenuItemClick(2)}>
-                                ALLclass</li></Link>
-                                <Link to='/ser'>
-                            <li className={activeIndex === 3 ? 'active' : ''} onClick={() => handleMenuItemClick(3)}>
-                                ALL Inastractor</li></Link>
+
+                            <Link to='/approveclass'>
+                                <li className={activeIndex === 2 ? 'active' : ''} onClick={() => handleMenuItemClick(2)}>
+                                    ALLclass</li></Link>
+                            <Link to='/ser'>
+                                <li className={activeIndex === 3 ? 'active' : ''} onClick={() => handleMenuItemClick(3)}>
+                                    ALL Inastractor</li></Link>
 
 
                             <p>
@@ -90,23 +116,41 @@ const Navber = () => {
 
                         <Link to='/'> <li className={activeIndex === 0 ? 'active' : ''} onClick={() => handleMenuItemClick(0)}>
                             Home</li> </Link>
-                            {
-                                user && <Link to='/dashboad'> <li className={activeIndex === 1 ? 'active' : ''} onClick={() => handleMenuItemClick(1)}>
+                        {
+                            user && <Link to='/dashboad'> <li className={activeIndex === 1 ? 'active' : ''} onClick={() => handleMenuItemClick(1)}>
                                 Dashbord</li></Link>
-                           
-                            }
-                        
+
+                        }
+
                         <Link to='/approveclass'>
                             <li className={activeIndex === 2 ? 'active' : ''} onClick={() => handleMenuItemClick(2)}>
                                 ALLclass</li></Link>
-                                <Link to='/ser'>
+                        <Link to='/ser'>
                             <li className={activeIndex === 3 ? 'active' : ''} onClick={() => handleMenuItemClick(3)}>
                                 ALL Inastractor</li></Link>
-                        
-                              
+
+
                     </ul>
                 </div>
+
+                <div className=" navbar-end ">
+                   
+                    <label className="swap mt-0 swap-rotate w-16 h-16">
+                        <input
+                            type="checkbox"
+                            onChange={handleToggle}
+                           
+                            checked={theme === "light" ? false : true}
+                            className="toggle toggle-sm"
+                        />
+
+                    </label>
+                </div>
+
+
                 <div className="navbar-end hidden lg:flex ">
+
+
                     <p>
                         {
                             user && <span>{user?.display}</span>
@@ -124,9 +168,9 @@ const Navber = () => {
                                 : <Link to={'/login'} className=" bg-green-500 px-7 py-3">Login</Link>
                         }
                     </p>
-                    
+
                 </div>
-                
+
             </div>
         </div>
 

@@ -16,7 +16,7 @@ const Extrasectoin = () => {
                 </div>
                 </div>
             <div className=' container mx-auto mb-28'>
-                <div className=' grid grid-cols-3 pt-12 '>
+                <div className=' grid lg:grid-cols-3 gap-8 pt-12 '>
 
                     <div className="card w-96 bg-orange-400 text-white shadow-xl">
                         <div className="card-body">
