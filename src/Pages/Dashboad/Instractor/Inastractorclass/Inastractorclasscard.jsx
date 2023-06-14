@@ -44,6 +44,7 @@ const Inastractorclasscard = ({ addclass, refetch }) => {
                         <div className=' flex gap-6'>
                             <p>Price: {addclass.price}</p>
                             <p>Availes Seats: {addclass.totalSeats}</p>
+                            <p> Enarol Student: {addclass.totalSeats - addclass.bookSeats}</p>
                         </div>
                         <div className="card-actions justify-end">
                             <div >
