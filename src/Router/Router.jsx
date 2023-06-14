@@ -16,6 +16,8 @@ import Eroorpage from '../Pages/Eroorpage/Eroorpage';
 import Allinstractor from '../Pages/Allinstractor/Allinstractor';
 import Paymenthistory from '../Pages/Dashboad/Paymenthistory/Paymenthistory';
 import Privaterouter from './Privaterouter';
+import AdminRouter from './AdminRouter';
+import InstractorRouter from './InstractorRouter';
 
 
 const router = createBrowserRouter([
@@ -52,11 +54,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "allusers",
-        element: <Allusers></Allusers>,
+        element: <AdminRouter><Allusers></Allusers></AdminRouter>,
       },
       {
         path: "allclass",
-        element: <AllClasss></AllClasss>
+        element: <AdminRouter><AllClasss></AllClasss></AdminRouter> 
       },
       {
         path: "mycart",
@@ -68,11 +70,11 @@ const router = createBrowserRouter([
       },
       {
         path: "Addclass",
-        element: <Addclass></Addclass>
+        element: <InstractorRouter><Addclass></Addclass></InstractorRouter>
       },
       {
         path: "myaddclass",
-        element: <Inastractorclass></Inastractorclass>
+        element: <InstractorRouter><Inastractorclass></Inastractorclass></InstractorRouter>
       },
       {
         path: "history",

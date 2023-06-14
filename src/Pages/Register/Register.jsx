@@ -15,7 +15,7 @@ const Register = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext)
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
-        if (data.password !== data.confarm) {
+        if (data.password !== data.conform) {
             return setError('password not mass')
         }
         console.log(data.name, data.image)
@@ -97,9 +97,9 @@ const Register = () => {
                                     required: true,
                                     minLength: 6,
                                     pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
-                                })} className='  py-2 rounded border-none outline-none' placeholder='Password' type={show ? "text" : "password"} name="password" id="" />
-                                <label className=' border-b-2 '></label>
-                                <p className=' ms-60 -m-6 text-2xl' onClick={() => setshow(!show)}> <small>
+                                })} className='  py-2 rounded border-none outline-none ' placeholder='Password' type={show ? "text" : "password"} name="password" id="" />
+
+                                <p className=' ms-60 -mt-8  mb-6 text-2xl' onClick={() => setshow(!show)}> <small>
                                     {
                                         show ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
                                     }
@@ -112,16 +112,15 @@ const Register = () => {
                             </div>
 
 
-                            <div className="form-control">
+                            <div className="form-control mt-12">
 
                                 <input {...register("conform", {
                                     required: true,
                                     minLength: 6,
                                     pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
-                                })} className='  py-2 rounded border-none outline-none' placeholder='conform Password' type={show ? "text" : "password"} name="conform" id="" />
-                                <label className=' border-b-2 '></label>
-
-                                <p className=' ms-60 -m-6 text-2xl' onClick={() => setshow(!show)}> <small>
+                                })} className='  py-2 rounded border-none outline-none mb-6' placeholder='conform Password' type={show ? "text" : "password"} name="conform" id="" />
+                                
+                                <p className=' ms-60 -mt-14 mb-6 text-2xl' onClick={() => setshow(!show)}> <small>
                                     {
                                         show ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
                                     }

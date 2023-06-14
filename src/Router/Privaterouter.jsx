@@ -7,6 +7,7 @@ const Privaterouter = ({children}) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
 
+
     if(loading){
         return  <div className='text-center   container mx-auto  px-16 py-36 mt-16'>
             
