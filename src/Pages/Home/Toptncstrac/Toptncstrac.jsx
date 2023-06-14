@@ -1,5 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { motion } from "framer-motion"
+
 
 const Toptncstrac = () => {
 
@@ -29,7 +31,8 @@ const Toptncstrac = () => {
                 {
                     topinstractor.map(topinstractor =>
                         <div className='  relative text-white'>
-                            <div className='mx-8 lg:m-0'>
+                            <motion.div whileHover={{ scale: 1.2 }}
+                                whileTap={{ scale: 0.9 }} className='mx-8 lg:m-0'>
                                 <img
                                     src={topinstractor.photo}
                                     alt=''
@@ -37,7 +40,7 @@ const Toptncstrac = () => {
                                 />
 
 
-                            </div>
+                            </motion.div>
                             <div className=' absolute -mt-11 z-10 w-10/12 ms-8 transform hover:-translate-y-6 rounded shadow-lg hover:shadow-2xl'>
                                 <div className=' bg-orange-400 bg-opacity-80 p-6 text-center '>
                                     <h1 className=' uppercase text-2xl'>{topinstractor.name}</h1>

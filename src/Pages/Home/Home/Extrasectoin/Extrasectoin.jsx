@@ -39,7 +39,7 @@ const Extrasectoin = () => {
 
                     <div className="card w-96 bg-orange-400 text-white shadow-xl">
                         <div className="card-body">
-                            <h2 className=' text-4xl'>Mini Camp</h2>
+                            <h2 className=' text-4xl'>International Trips</h2>
                             <p className=' text-3xl italic'>ages 11-13</p>
                         </div>
                         <figure><img src="https://images.pexels.com/photos/8033865/pexels-photo-8033865.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Shoes" /></figure>
