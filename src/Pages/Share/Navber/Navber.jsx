@@ -67,12 +67,12 @@ const Navber = () => {
 
                     </div>
                     <div>
-                        <div className=''>
-                            <div className=' w-24 mx-auto '>
+                        <div className=' lg:flex-col flex flex-row lg:ms-0  ms-16'>
+                            <div className=' w-24 mx-auto  '>
                                 <img className=' h-14 w-full' src={img1} alt="" srcset="" />
 
                             </div>
-                            <h1 className=' font-extrabold text-green-50 text-3xl'>Camp Victory.
+                            <h1 className=' font-extrabold text-green-50 lg:text-3xl text-2xl'>Camp Victory.
                             </h1>
                         </div>
                     </div>

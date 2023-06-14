@@ -26,7 +26,7 @@ const Allinstractor = () => {
                     <h1 className="text-3xl uppercase text-green-500  py-4">Our INSTRAVTOR</h1>
                 </div>
             </div>
-            <div className=' grid grid-cols-3 gap-20 container mx-auto mt-16 mb-36'>
+            <div className=' lg:grid lg:grid-cols-3 gap-20 container mx-auto mt-16 mb-36'>
                 {
                     topinstractor.map(topinstractor =>
                         <div className='  relative text-white'>

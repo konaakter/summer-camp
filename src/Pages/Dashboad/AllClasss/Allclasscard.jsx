@@ -1,30 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import useAxiosSecure from '../../../hooks/useAxiosSecure';
-import { useQuery } from '@tanstack/react-query';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
+import Swal from 'sweetalert2';
 
-import Allclasscard from './Allclasscard';
-
-const AllClasss = () => {
-
-
-    const [axiosSecure] = useAxiosSecure();
+const Allclasscard = ({ allcllass, refetch }) => {
     const [diasble, setdiasble] = useState(true);
 
 
-    const { refetch, data: allcllass = [] } = useQuery({
-        queryKey: ['/allcllass'],
-        queryFn: async () => {
-            const res = await axiosSecure.get('/allcllass')
-            return res.data
+    
+    useEffect(() => {
+        if (allcllass.status === 'Deny') {
 
-        },
-    })
+            setdiasble(false)
+        }
+        else{
+            setdiasble(true)
+        }
+    }, [allcllass.status === 'Deny'])
 
-   
-         
- 
-
-    /*const handleapprove = allcllass => {
+    const handleapprove = allcllass => {
         fetch(`https://summer-camp-server-navy-omega.vercel.app/allcllass/approve/${allcllass._id}`, {
             method: 'PATCH'
         })
@@ -103,37 +96,55 @@ const AllClasss = () => {
 
             //Swal.fire(text)
         }
-    }*/
+    }
 
     return (
-        <div className=' w-9/12 mx-auto'>
-            <div className="mx-auto text-center md:w-4/12 pb-6 ">
-                <div className='  '>
-                    <hr />
+        <div>
+            <div className="card w-96 bg-base-100 shadow-xl text-white space-y-4s">
+                <figure><img src={allcllass.photo} /></figure>
+                <div className="card-body bg-orange-400">
+                    <h2 className="card-title">
+                        {
+                            allcllass.artCraftName
+                        }
+                    </h2>
+                    <p>Instructor Name: {allcllass.instructorName}</p>
+                    <p> Email: {allcllass.instructorEmail}</p>
+                    <div className=' flex gap-6  items-center '>
+                        <p>Price: ${allcllass.price}</p>
 
-                    <p className=" mb-2 uppercase">All class</p>
-                    <hr />
+                        <p>Available seats: {allcllass.totalSeats}</p>
+
+                    </div>
+                    <div className="card-actions justify-end mt-6">
+                        <div >
+                            {allcllass.status === 'approved' ? 'Approve' :
+                                <button onClick={() => handleapprove(allcllass)} className=" bg-green-400 px-4  hover:bg-transparent border-green-400 rounded-3xl">Approve</button>
+                            }
+                        </div>
+                        <div >
+
+                            {allcllass.status === 'Deny' ? 'Deny' :
+                                <button onClick={() => handleDeny(allcllass)} className=" bg-green-400 px-4 hover:bg-transparent border-green-400 rounded-3xl">Deny</button>
+                            }
+
+                        </div>
+                        <div >
+
+                            {allcllass.feedback ? 'Done' :
+                                <button disabled={diasble} onClick={() => handlefeadback(allcllass)} className=" bg-green-400 px-4  hover:bg-transparent border-green-400 rounded-3xl">Feedback</button>
+                            }
+
+                        </div>
+                    </div>
                 </div>
-
-                <h1 className="text-3xl uppercase text-green-500  py-4">Manage Classes</h1>
             </div>
-            <div className=' grid grid-cols-2 gap-10'>
-                {
-                    allcllass.map((allcllass, index) =>
-
-                       <Allclasscard
-                       allcllass={allcllass}
-                       refetch={ refetch}
-                       ></Allclasscard>
 
 
 
-                    )
-                }
 
-            </div>
         </div>
     );
 };
 
-export default AllClasss;
+export default Allclasscard;

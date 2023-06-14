@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
+import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers,  FaBox, FaUser } from 'react-icons/fa';
 import useAdmin from '../hooks/useAdmin';
 import useInstractor from '../hooks/useInstractor';
 
@@ -19,23 +19,21 @@ const Dashboard = () => {
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+                <ul className="menu p-4 w-80 h-full bg-green-500 text-zinc-50">
                     {
                         isAdmin ? <>
-                            <li><NavLink to="/dashboad/home"><FaHome></FaHome> Admin Home</NavLink></li>
-                            <li><NavLink to="/dashboad/reservations"> <FaUtensils></FaUtensils> Add Items</NavLink></li>
-                            <li><NavLink to="/dashboad/history"><FaWallet></FaWallet> Manage Items</NavLink></li>
-                            <li><NavLink to="/dashboad/allclass"><FaBook></FaBook>All class</NavLink></li>
-                            <li><NavLink to="/dashboad/allusers"><FaUsers></FaUsers> All Users</NavLink></li>
+                            <li><NavLink to="/"><FaHome></FaHome> Admin Home</NavLink></li>
+                            <li><NavLink to="/dashboad/allclass"><FaBook></FaBook>Manage Classes</NavLink></li>
+                            <li><NavLink to="/dashboad/allusers"><FaUsers></FaUsers> Manage Users</NavLink></li>
 
                         </> : isInstractor ?
 
                             <>
-                                <li><NavLink to="/dashboad/home"><FaHome></FaHome> Instractor </NavLink></li>
-                                <li><NavLink to="/dashboad/reservations"><FaCalendarAlt></FaCalendarAlt> Reservations</NavLink></li>
-                                <li><NavLink to="/dashboad/myaddclass"><FaWallet></FaWallet> My added Class</NavLink></li>
+                                <li><NavLink to="/"><FaHome></FaHome> Instractor Home </NavLink></li>
+                               
+                                <li><NavLink to="/dashboad/myaddclass"> My added Class</NavLink></li>
                                 <li>
-                                    <NavLink to="/dashboad/Addclass"><FaShoppingCart></FaShoppingCart> Class add
+                                    <NavLink to="/dashboad/Addclass"> Add Class
                                         <span className="badge inl badge-secondary"></span>
                                     </NavLink>
 
@@ -55,8 +53,8 @@ const Dashboard = () => {
                     }
                     <div className="divider"></div>
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
-                    <li><NavLink to="/menu"> Our Menu</NavLink></li>
-                    <li><NavLink to="/order/salad">Order Food</NavLink></li>
+                    <li><NavLink to="/menu"><FaBox></FaBox> All Class</NavLink></li>
+                    <li><NavLink to="/order/salad"> <FaUser></FaUser> All Instractor</NavLink></li>
                 </ul>
 
             </div>

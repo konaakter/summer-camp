@@ -66,11 +66,11 @@ const Allusers = () => {
         <div>
             <div className="w-full">
                 
-                <h3 className="text-3xl font-semibold my-4">Total User: {user.length}</h3>
-                <div className="overflow-x-auto">
+                <h3 className="text-3xl font-semibold my-4 text-center bg-orange-400 text-white py-10">Total User: {user.length}</h3>
+                <div className="overflow-x-auto w-9/12 mx-auto">
                     <table className="table table-zebra w-full">
                         {/* head */}
-                        <thead>
+                        <thead className=' bg-green-500 '>
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
@@ -86,11 +86,11 @@ const Allusers = () => {
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
                                     <td>{user.role === 'admin' ? 'admin' :
-                                        <button onClick={() => handleAdmin(user)} className="btn btn-ghost bg-orange-600  text-white"><FaUserShield></FaUserShield></button>
+                                        <button onClick={() => handleAdmin(user)} className="btn btn-ghost bg-orange-400  text-white"><FaUserShield></FaUserShield></button>
                                     }</td>
                                     <td>
-                                    {user.role === 'instractor' ? 'instractor' :
-                                        <button onClick={() => handleinstractor(user)} className="btn btn-ghost bg-red-600  text-white">Instractor
+                                    {user.role === 'instractor' ? 'Instractor' :
+                                        <button onClick={() => handleinstractor(user)} className="btn btn-ghost bg-green-500  text-white">Instractor
                                     </button>}
                                     </td>
                                 </tr>)

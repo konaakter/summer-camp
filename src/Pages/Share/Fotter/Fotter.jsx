@@ -6,7 +6,7 @@ import { FaBeer, FaFacebookF, FaInstagram, FaPhone, FaTwitter, FaHouzz, FaRegEnv
 const Fotter = () => {
 
     return (
-        <div className=' bg-img'>
+        <div className=' bg-img mt-20'>
             <div className='container mx-auto'>
                 <div className=' w-1/4	 mx-auto pt-16'>
                     <img className=' h-28 w-60' src={logo} alt="" />
@@ -59,7 +59,7 @@ const Fotter = () => {
                 </footer>
 
 
-                        <h1 className=' text-center py-5 text-xl'>Copyright © 2022 HasThemes | Built with Toyqo by HasThemes.</h1>
+                        <h1 className=' text-center py-5 text-xl text-white'>Copyright © 2022 HasThemes | Built with Toyqo by HasThemes.</h1>
                     
 
             </div>

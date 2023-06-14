@@ -25,15 +25,15 @@ const Toptncstrac = () => {
                     <h1 className="text-3xl uppercase text-green-500  py-4">POPULER INSTRAVTOR</h1>
                 </div>
             </div>
-            <div className=' grid grid-cols-3 gap-20 container mx-auto my-20'>
+            <div className=' grid lg:grid-cols-3 gap-28 container mx-auto my-20'>
                 {
                     topinstractor.map(topinstractor =>
                         <div className='  relative text-white'>
-                            <div className=''>
+                            <div className='mx-8 lg:m-0'>
                                 <img
                                     src={topinstractor.photo}
                                     alt=''
-                                    className=' object-cover w-full h-56 md:h-64 xl:h-96'
+                                    className=' object-cover w-full  h-56 md:h-64 xl:h-96'
                                 />
 
 
