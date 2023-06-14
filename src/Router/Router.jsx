@@ -33,6 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/approveclass",
         element: <ApproveClass></ApproveClass>,
+        
       },
       {
         path: "/ser",

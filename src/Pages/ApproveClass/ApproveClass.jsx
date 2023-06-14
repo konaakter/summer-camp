@@ -4,7 +4,7 @@ import React from 'react';
 import ApproveClasscard from './ApproveClasscard';
 
 const ApproveClass = () => {
-    
+   
 
     const { refetch, data: approveclass = [] } = useQuery({
         queryKey: ['approveclass '],

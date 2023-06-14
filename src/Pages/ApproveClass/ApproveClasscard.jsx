@@ -5,7 +5,7 @@ import ApproveClass from './ApproveClass';
 import useAdmin from '../../hooks/useAdmin';
 import useInstractor from '../../hooks/useInstractor';
 
-const ApproveClasscard = ({ approveclass, refetch }) => {
+const ApproveClasscard = ({ approveclass, refetch}) => {
     //const [, refetch] = ApproveClass;
     const { _id, photo, artCraftName, price, totalSeats, bookSeats, instructorName, instructorEmail } = approveclass
     const { user } = useContext(AuthContext)
@@ -35,11 +35,11 @@ const ApproveClasscard = ({ approveclass, refetch }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
-                        refetch();
+                       refetch()
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'Food added on the cart.',
+                            title: 'Class added yor cart.',
                             showConfirmButton: false,
                             timer: 1500
                         })
