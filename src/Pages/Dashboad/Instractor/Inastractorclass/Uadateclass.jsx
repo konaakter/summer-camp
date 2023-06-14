@@ -9,7 +9,7 @@ import { Fragment } from 'react'
 import Swal from 'sweetalert2';
 
 
-const Uadateclass = ({ uapdateInfo, isOpen, closeModal }) => {
+const Uadateclass = ({ uapdateInfo, isOpen, closeModal, refetch }) => {
 
 
     const onSubmit = data => {
@@ -17,7 +17,7 @@ const Uadateclass = ({ uapdateInfo, isOpen, closeModal }) => {
         console.log(data)
         const{artCraftName, price, instructorEmail,instructorname, totalSeats} = data;
 
-        const addclass = {artCraftName: artCraftName, price: price,  totalSeats: parseInt(totalSeats) }
+        const addclass = {artCraftName: artCraftName, price: parseFloat(price) ,  totalSeats: parseFloat(totalSeats) }
         console.log(addclass )
 
         fetch(`https://summer-camp-server-navy-omega.vercel.app/addclas/${uapdateInfo._id}`, {
@@ -31,11 +31,12 @@ const Uadateclass = ({ uapdateInfo, isOpen, closeModal }) => {
         .then(data => {
             console.log(data)
             if(data.modifiedCount){
+                refetch()
                 
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: `${user.name} is an Admin Now!`,
+                    title: `${uapdateInfo.artCraftName} class hass been change!`,
                     showConfirmButton: false,
                     timer: 1500
                   })
@@ -81,10 +82,10 @@ const Uadateclass = ({ uapdateInfo, isOpen, closeModal }) => {
 
 
 
-                                <div className='border-4 border-pink-300 p-1'>
-                                    <div className=' bg-slate-400   transition-colors duration-200 delay-500 p-10'>
+                                <div className='border-2 border-orange-400 p-1'>
+                                    <div className='    transition-colors duration-200 delay-500 p-10'>
                                         <form onSubmit={handleSubmit(onSubmit)} >
-                                            <div>
+                                            <div className=' '>
                                                 <div className="form-control">
                                                     <label className="label">
                                                         <span className="label-text">Class name</span>
@@ -93,26 +94,13 @@ const Uadateclass = ({ uapdateInfo, isOpen, closeModal }) => {
                                                         <input defaultValue={uapdateInfo.artCraftName} type="text" {...register("artCraftName", { required: true })} name="artCraftName" placeholder=" Name" className="input input-bordered w-full" />
                                                     </label>
                                                 </div>
-                                                <div className="form-control ">
-                                                    <label className="label">
-                                                        <span className="label-text">Photo</span>
-                                                    </label>
-                                                    <div className="form-control w-full ">
-                                                        <label className="label">
-
-                                                        </label>
-                                                        <input type="file" {...register("photo", { required: true })} name='photo' className="file-input file-input-bordered w-full max-w-xs" />
-                                                        <label className="label">
-
-                                                        </label>
-                                                    </div>
-                                                </div>
+                                                
                                                 <div className="form-control">
                                                     <label className="label">
                                                         <span className="label-text">Instructor name </span>
                                                     </label>
                                                     <label className="">
-                                                        <input  {...register("instructorname", { required: true })} defaultValue={user?.displayName} type="text" name="instructorname" placeholder="Instructor name "
+                                                        <input  {...register("instructorname", { required: true })} defaultValue={user?.displayName} readOnly type="text" name="instructorname" placeholder="Instructor name "
                                                             className="input input-bordered w-full" />
                                                     </label>
                                                 </div>
@@ -121,7 +109,7 @@ const Uadateclass = ({ uapdateInfo, isOpen, closeModal }) => {
                                                         <span className="label-text">Instructor Email</span>
                                                     </label>
                                                     <label className="">
-                                                        <input {...register("instructorEmail", { required: true })} defaultValue={user?.email} type="text" name="instructorEmail" placeholder="Instructor Email"
+                                                        <input {...register("instructorEmail", { required: true })} defaultValue={user?.email} readOnly type="text" name="instructorEmail" placeholder="Instructor Email"
                                                             className="input input-bordered w-full" />
                                                     </label>
                                                 </div>
@@ -145,8 +133,8 @@ const Uadateclass = ({ uapdateInfo, isOpen, closeModal }) => {
                                                 </div>
                                             </div>
                                             <button
-                                                className=' w-full bg-pink-300 px-5 py-2 border-2
-                                                mt-8 text-white  rounded'>
+                                                className=' w-full bg-green-400 rounded-s-3xl px-5 py-2 border-2
+                                                mt-8 text-white  '>
                                                 Add button</button>
                                         </form>
                                     </div>
@@ -162,12 +150,7 @@ const Uadateclass = ({ uapdateInfo, isOpen, closeModal }) => {
                                     >
                                         Cancel
                                     </button>
-                                    <button
-                                        type='submit'
-                                        className='inline-flex justify-center rounded-md border border-transparent bg-green-100 px-4 py-2 text-sm font-medium text-green-900 hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2'
-                                    >
-                                        Pay
-                                    </button>
+                                    
 
 
 
@@ -182,3 +165,19 @@ const Uadateclass = ({ uapdateInfo, isOpen, closeModal }) => {
 };
 
 export default Uadateclass;
+
+/*
+<div className="form-control ">
+                                                    <label className="label">
+                                                        <span className="label-text">Photo</span>
+                                                    </label>
+                                                    <div className="form-control w-full ">
+                                                        <label className="label">
+
+                                                        </label>
+                                                        <input type="file" {...register("photo", { required: true })} name='photo' className="file-input file-input-bordered w-full max-w-xs" />
+                                                        <label className="label">
+
+                                                        </label>
+                                                    </div>
+                                                </div>*/

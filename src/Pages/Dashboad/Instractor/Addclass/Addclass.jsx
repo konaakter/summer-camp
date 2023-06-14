@@ -57,7 +57,7 @@ const Addclass = () => {
                     const imgURL = imgResponse.data.display_url;
                     console.log(imgURL)
                     const { name, price, instructorEmail, instructorname, totalSeats } = data;
-                    const addclass = { artCraftName: name, instructorEmail: instructorEmail, price, instructorName: instructorname, photo: imgURL, totalSeats: parseInt(totalSeats), bookSeats: 0, status: 'panding' }
+                    const addclass = { artCraftName: name, instructorEmail: instructorEmail, price: parseFloat(price), instructorName: instructorname, photo: imgURL, totalSeats: parseInt(totalSeats), bookSeats: 0, status: 'panding' }
                     console.log(addclass)
 
                     axiosSecure.post('/addclass', addclass)
@@ -82,9 +82,19 @@ const Addclass = () => {
 
 
     return (
-        <div className=' w-1/2 mx-auto pt-5'>
-            <div className='border-4 border-pink-300 p-1'>
-                <div className=' bg-slate-400   transition-colors duration-200 delay-500 p-10'>
+        <div className=' w-1/2 mx-auto  mb-12'>
+                <div className="mx-auto text-center md:w-4/12 mt-9 ">
+                    <div className='  '>
+                        <hr />
+
+                        <p className=" mb-2 uppercase">INSTRACTOR</p>
+                        <hr />
+                    </div>
+
+                    <h1 className="text-3xl uppercase text-green-500  py-4">Add class </h1>
+                </div>
+            <div className='border-2  border-orange-400  p-1'>
+                <div className='    transition-colors duration-200 delay-500 p-10'>
                     <form onSubmit={handleSubmit(onSubmit)} >
                         <div>
                             <div className="form-control">
@@ -114,7 +124,7 @@ const Addclass = () => {
                                     <span className="label-text">Instructor name </span>
                                 </label>
                                 <label className="">
-                                    <input {...register("instructorname", { required: true })} defaultValue={user?.displayName} type="text" name="instructorname" placeholder="Instructor name "
+                                    <input {...register("instructorname", { required: true })} defaultValue={user?.displayName} readOnly type="text" name="instructorname" placeholder="Instructor name "
                                         className="input input-bordered w-full" />
                                 </label>
                             </div>
@@ -123,7 +133,7 @@ const Addclass = () => {
                                     <span className="label-text">Instructor Email</span>
                                 </label>
                                 <label className="">
-                                    <input {...register("instructorEmail", { required: true })} defaultValue={user?.email} type="text" name="instructorEmail" placeholder="Instructor Email"
+                                    <input {...register("instructorEmail", { required: true })} defaultValue={user?.email} readOnly type="text" name="instructorEmail" placeholder="Instructor Email"
                                         className="input input-bordered w-full" />
                                 </label>
                             </div>
@@ -147,8 +157,8 @@ const Addclass = () => {
                             </div>
                         </div>
                         <button
-                            className=' w-full bg-pink-300 px-5 py-2 border-2
-                         mt-8 text-white  rounded'>
+                            className=' w-full bg-green-400 rounded-3xl px-5 py-2 border-2
+                         mt-8 text-white '>
                             Add button</button>
                     </form>
                 </div>
