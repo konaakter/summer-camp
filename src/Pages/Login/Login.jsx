@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/Authprovider';
@@ -10,6 +10,10 @@ import Socallogin from '../../Componet/SocalLogin/Socallogin';
 const Login = () => {
     const [show, setshow] = useState(false)
     const { signIn } = useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
 
    
 
@@ -28,6 +32,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
+                navigate(from, { replace: true });
 
             })
             .catch(error => console.log(error))

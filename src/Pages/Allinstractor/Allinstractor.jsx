@@ -7,7 +7,7 @@ const Allinstractor = () => {
     const { refetch, data: topinstractor = [] } = useQuery({
         queryKey: ['topinstractor'],
         queryFn: async () => {
-            const response = await fetch('http://localhost:5000/topinstractor')
+            const response = await fetch('https://summer-camp-server-navy-omega.vercel.app/topinstractor')
             return response.json()
 
         },

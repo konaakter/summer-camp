@@ -31,9 +31,9 @@ const Dashboard = () => {
                             <>
                                 <li><NavLink to="/"><FaHome></FaHome> Instractor Home </NavLink></li>
                                
-                                <li><NavLink to="/dashboad/myaddclass"> My added Class</NavLink></li>
+                                <li><NavLink to="/dashboad/myaddclass"> <FaCalendarAlt></FaCalendarAlt> My added Class</NavLink></li>
                                 <li>
-                                    <NavLink to="/dashboad/Addclass"> Add Class
+                                    <NavLink to="/dashboad/Addclass"> <FaCalendarAlt></FaCalendarAlt> Add Class
                                         <span className="badge inl badge-secondary"></span>
                                     </NavLink>
 

@@ -15,6 +15,7 @@ import Inastractorclass from '../Pages/Dashboad/Instractor/Inastractorclass/Inas
 import Eroorpage from '../Pages/Eroorpage/Eroorpage';
 import Allinstractor from '../Pages/Allinstractor/Allinstractor';
 import Paymenthistory from '../Pages/Dashboad/Paymenthistory/Paymenthistory';
+import Privaterouter from './Privaterouter';
 
 
 const router = createBrowserRouter([
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboad",
-    element: <Dashboard></Dashboard>,
+    element: <Privaterouter><Dashboard></Dashboard></Privaterouter> ,
     children: [
       {
         path: "allusers",
