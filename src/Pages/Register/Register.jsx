@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/Authprovider';
 import Swal from 'sweetalert2';
 import { FaEye, FaEyeSlash,  } from 'react-icons/fa';
+import Socallogin from '../../Componet/SocalLogin/Socallogin';
 
 
 
@@ -53,7 +54,7 @@ const Register = () => {
     }
     return (
         <div className=' bg'>
-            <div className='  mx-auto'>
+            <div className='  mx-auto py-14'>
                 <div className=' lg:flex lg:gap-40 justify-center bg-transparent '>
                     <div data-aos="zoom-in-down" className=' border lg:w-3/12 w-4/5 lg:mx-0 mx-auto  pt-7 pb-7  px-7 my-11  '>
                         <h2 className='text-2xl text-bold mb-4 text-center'>Login</h2>
@@ -97,8 +98,11 @@ const Register = () => {
                                 {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>}
                             </div>
                             <div className=' mt-10'>
-                            <button className="btn btn-wide bg-cyan-400 border-white mt-6"> <Link>REgister</Link></button>
+                            <button className="btn btn-wide bg-green-400 border-white mt-6"> <Link>REgister</Link></button>
                             </div>
+                            <p className=' mt-3'>------------------or------------------</p>
+                            <Socallogin></Socallogin>
+
                            
 
                         </form>

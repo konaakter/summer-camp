@@ -39,8 +39,8 @@ const Socallogin = () => {
     }
     return (
         <div className=' text-center '>
-            <button onClick={handlergoogle} className="btn btn-wide bg-cyan-400 border-white mt-6">
-                <FaGoogle className=' text-2xl'></FaGoogle>Gogoole</button>
+            <button onClick={handlergoogle} className="btn btn-wide bg-transparent border-white mt-6">
+                <FaGoogle className=' text-2xl text-green-400'></FaGoogle>Gogoole</button>
 
         </div>
     );

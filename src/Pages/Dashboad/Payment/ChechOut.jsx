@@ -86,6 +86,8 @@ const ChechOut = ({ bookingInfo, closeModal }) => {
                 price : bookingInfo.price,
                 artCraftName : bookingInfo.artCraftName,
                 sleted_id : bookingInfo._id,
+                date: new Date(),
+                photo: bookingInfo.photo
                 /*price,
                 date: new Date(),
                 quantity: cart.length,

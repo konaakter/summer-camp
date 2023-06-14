@@ -5,15 +5,17 @@ const Studentcartcad = ({ sletedclass, index, handleremove }) => {
 
     const [isOpen, setIsOpen] = useState(false)
     const closeModal = () => {
-      setIsOpen(false)
+        setIsOpen(false)
     }
 
     const [bookingInfo, setBookingInfo] = useState({
-        artCraftName : sletedclass.artCraftName,
-        _id : sletedclass._id,
-        
-        price :  sletedclass.price
-      })
+        artCraftName: sletedclass.artCraftName,
+        _id: sletedclass._id,
+
+        photo: sletedclass.photo,
+
+        price: sletedclass.price
+    })
     return (
         <tr>
             <th>
@@ -29,7 +31,7 @@ const Studentcartcad = ({ sletedclass, index, handleremove }) => {
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
-                            <img src="https://images.pexels.com/photos/2662816/pexels-photo-2662816.jpeg?auto=compress&cs=tinysrgb&w=600" />
+                            <img src={sletedclass.photo} />
                         </div>
                     </div>
                     <div>
@@ -65,7 +67,7 @@ const Studentcartcad = ({ sletedclass, index, handleremove }) => {
                 </button>
             </th>
             <Modal
-                
+
                 bookingInfo={bookingInfo}
                 isOpen={isOpen}
                 closeModal={closeModal}

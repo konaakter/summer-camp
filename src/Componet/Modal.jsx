@@ -47,7 +47,12 @@ const Modal = ({ closeModal, isOpen, bookingInfo }) => {
                                 </Dialog.Title>
                                 <div className='mt-2'>
                                     <p className='text-sm text-gray-500'>
-                                        Room: {bookingInfo.artCraftName}
+                                         <img src={bookingInfo.photo} alt="" srcset="" />
+                                    </p>
+                                    </div>
+                                <div className='mt-2'>
+                                    <p className='text-sm text-gray-500'>
+                                        class Name: {bookingInfo.artCraftName}
                                     </p>
                                 </div>
 

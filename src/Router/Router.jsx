@@ -14,6 +14,7 @@ import Addclass from '../Pages/Dashboad/Instractor/Addclass/Addclass';
 import Inastractorclass from '../Pages/Dashboad/Instractor/Inastractorclass/Inastractorclass';
 import Eroorpage from '../Pages/Eroorpage/Eroorpage';
 import Allinstractor from '../Pages/Allinstractor/Allinstractor';
+import Paymenthistory from '../Pages/Dashboad/Paymenthistory/Paymenthistory';
 
 
 const router = createBrowserRouter([
@@ -72,7 +73,10 @@ const router = createBrowserRouter([
         path: "myaddclass",
         element: <Inastractorclass></Inastractorclass>
       },
-      
+      {
+        path: "history",
+        element: <Paymenthistory></Paymenthistory>
+      },
      
     ],
   },

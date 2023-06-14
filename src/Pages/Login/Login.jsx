@@ -69,7 +69,7 @@ const Login = () => {
 
                         </form>
                         <p className=''> <small>New to this website ? please
-                            <Link className='text-green-400  underline' to='/sinup'>Register</Link></small></p>
+                            <Link className='text-cyan-400  underline' to='/sinup'>Register</Link></small></p>
                     </div>
                     <div>
 

@@ -7,7 +7,7 @@ import useInstractor from '../../hooks/useInstractor';
 
 const ApproveClasscard = ({ approveclass, refetch }) => {
     //const [, refetch] = ApproveClass;
-    const { _id, image, artCraftName, price, totalSeats, bookSeats, instructorName, instructorEmail } = approveclass
+    const { _id, photo, artCraftName, price, totalSeats, bookSeats, instructorName, instructorEmail } = approveclass
     const { user } = useContext(AuthContext)
     const [isAdmin] = useAdmin();
     const [isInstractor] = useInstractor();
@@ -23,7 +23,7 @@ const ApproveClasscard = ({ approveclass, refetch }) => {
     const handlesleleted = approveclass => {
         console.log(approveclass);
         if (user && user.email) {
-            const classcard = { approveclassId: _id, image, artCraftName, price, totalSeats, bookSeats, instructorName, instructorEmail, email: user.email }
+            const classcard = { approveclassId: _id, photo, artCraftName, price, totalSeats, bookSeats, instructorName, instructorEmail, email: user.email }
 
             fetch('https://summer-camp-server-navy-omega.vercel.app/sletedclass', {
                 method: 'POST',
@@ -56,7 +56,7 @@ const ApproveClasscard = ({ approveclass, refetch }) => {
                 confirmButtonText: 'Login now!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    navigate('/login', { state: { from: location } })
+                    
                 }
             })
         }

@@ -34,15 +34,21 @@ const Navber = () => {
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                            <Link to='/'> <li className={activeIndex === 0 ? 'active' : ''} onClick={() => handleMenuItemClick(0)}>
-                                Home</li> </Link>
-                            <Link to='/dashboad'> <li className={activeIndex === 1 ? 'active' : ''} onClick={() => handleMenuItemClick(1)}>
-                                login</li></Link>
-                            <Link to="/sinup"><li className={activeIndex === 2 ? 'active' : ''} onClick={() => handleMenuItemClick(2)}>
-                                Services</li></Link>
-                            <Link to='/approveclass'> <li className={activeIndex === 3 ? 'active' : ''} onClick={() => handleMenuItemClick(3)}>
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-orange-400 bg-opacity-50 rounded-box w-52">
+                        <Link to='/'> <li className={activeIndex === 0 ? 'active' : ''} onClick={() => handleMenuItemClick(0)}>
+                            Home</li> </Link>
+                            {
+                                user && <Link to='/dashboad'> <li className={activeIndex === 1 ? 'active' : ''} onClick={() => handleMenuItemClick(1)}>
+                                Dashbord</li></Link>
+                           
+                            }
+                        
+                        <Link to='/approveclass'>
+                            <li className={activeIndex === 2 ? 'active' : ''} onClick={() => handleMenuItemClick(2)}>
                                 ALLclass</li></Link>
+                                <Link to='/ser'>
+                            <li className={activeIndex === 3 ? 'active' : ''} onClick={() => handleMenuItemClick(3)}>
+                                ALL Inastractor</li></Link>
 
 
                             <p>
@@ -58,8 +64,8 @@ const Navber = () => {
                                                 user.photoURL &&
                                                 <img className='w-12 rounded-full' title={user.displayName ? user.displayName : ''} src={user.photoURL} />
                                             }
-                                            <Link onClick={handlelogout} className="btn">LogOut</Link> </span>
-                                        : <Link to={'/login'} className="btn">Login</Link>
+                                            <Link onClick={handlelogout} className=" bg-green-400 px-2 rounded-3xl">LogOut</Link> </span>
+                                        : <Link to={'/login'} className=" bg-green-400 p-2 rounded-2xl">Login</Link>
                                 }
                             </p>
 
@@ -84,15 +90,17 @@ const Navber = () => {
 
                         <Link to='/'> <li className={activeIndex === 0 ? 'active' : ''} onClick={() => handleMenuItemClick(0)}>
                             Home</li> </Link>
-                        <Link to='/dashboad'> <li className={activeIndex === 1 ? 'active' : ''} onClick={() => handleMenuItemClick(1)}>
-                            login</li></Link>
-                        <Link to="/sinup"><li className={activeIndex === 2 ? 'active' : ''} onClick={() => handleMenuItemClick(2)}>
-                            Services</li></Link>
+                            {
+                                user && <Link to='/dashboad'> <li className={activeIndex === 1 ? 'active' : ''} onClick={() => handleMenuItemClick(1)}>
+                                Dashbord</li></Link>
+                           
+                            }
+                        
                         <Link to='/approveclass'>
-                            <li className={activeIndex === 3 ? 'active' : ''} onClick={() => handleMenuItemClick(3)}>
+                            <li className={activeIndex === 2 ? 'active' : ''} onClick={() => handleMenuItemClick(2)}>
                                 ALLclass</li></Link>
                                 <Link to='/ser'>
-                            <li className={activeIndex === 4 ? 'active' : ''} onClick={() => handleMenuItemClick(4)}>
+                            <li className={activeIndex === 3 ? 'active' : ''} onClick={() => handleMenuItemClick(3)}>
                                 ALL Inastractor</li></Link>
                         
                               

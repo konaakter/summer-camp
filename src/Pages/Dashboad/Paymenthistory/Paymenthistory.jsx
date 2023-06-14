@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../Provider/Authprovider';
 
-const Bokingclass = () => {
+const Paymenthistory = () => {
     const { user } = useContext(AuthContext)
 
 
@@ -25,8 +25,8 @@ const Bokingclass = () => {
                         <tr>
                             <th>#</th>
                             <th>Photo</th>
-                            <th>Name</th>
-                            <th>Price</th>
+                            <th>TransactionId</th>
+                            <th>date</th>
                            
                         </tr>
                     </thead>
@@ -41,9 +41,9 @@ const Bokingclass = () => {
                                         </div>
                                     </div>
                                 </td>
-                                <td>{payments.artCraftName}</td>
+                                <td>{payments.transactionId}</td>
 
-                                <td>{payments.price}</td>
+                                <td>{payments.date}</td>
                             </tr>)
                         }
 
@@ -57,4 +57,4 @@ const Bokingclass = () => {
     );
 };
 
-export default Bokingclass;
+export default Paymenthistory;
