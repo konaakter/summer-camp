@@ -4,6 +4,7 @@ import {
     useQuery,
 
 } from '@tanstack/react-query'
+import { motion } from "framer-motion"
 
 
 
@@ -38,9 +39,13 @@ const Populerclass = () => {
                 {
                     allclass.map(allclass =>
                         <div className="card w-96 bg-slate-100 shadow-xl text-slate-50">
-                            <figure className="px-10 pt-10">
-                                <img src={allclass.photo} alt=" " className="rounded-xl" />
-                            </figure>
+                            <motion.div whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}>
+                                <figure className="px-10 pt-10">
+                                    <img src={allclass.photo} alt=" " className="rounded-xl" />
+                                </figure>
+                            </motion.div>
+
                             <div className=' bg-orange-400 m-6   transform hover:-translate-y-16 '>
                                 <div className="card-body items-center text-center  ">
                                     <h2 className="card-title"> Class Name: {allclass.artCraftName}</h2>
