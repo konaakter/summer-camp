@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/Authprovider';
 import Swal from 'sweetalert2';
 import { FaEye, FaEyeSlash, } from 'react-icons/fa';
 import Socallogin from '../../Componet/SocalLogin/Socallogin';
+import { useContext, useState } from "react";
 
 
 
@@ -73,31 +73,43 @@ const Register = () => {
                         <h2 className='text-2xl text-bold mb-4 text-center'>Login</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-control">
+                            <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
 
-                                <input {...register("name", { required: true })} className='  py-2 rounded border-none outline-none' placeholder='Name' type="text" name="name" id="" />
-                                <label className=' border-b-2 mb-6'></label>
+                                <input {...register("name", { required: true })} className='  py-2 rounded ' placeholder='Name' type="text" name="name" id="" />
+                                
                                 {errors.name && <span>This field is required</span>}
                             </div>
                             <div className="form-control">
+                            <label className="label">
+                                    <span className="label-text">Photo Url</span>
+                                </label>
 
-                                <input {...register("photo", { required: true })} className='  py-2 rounded border-none outline-none' placeholder='Photo URL' type="text" name="photo" id="" />
-                                <label className=' border-b-2 mb-6'></label>
+                                <input {...register("photo", { required: true })} className=' mt-4  py-2 rounded ' placeholder='Photo URL' type="text" name="photo" id="" />
+                               
                                 {errors.photo && <span>This field is required</span>}
                             </div>
                             <div className="form-control">
+                            <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
 
-                                <input {...register("email", { required: true })} className=' py-2 rounded border-none outline-none' placeholder='Email' type="email" name="email" id="" />
-                                <label htmlFor="email" className='border-b-2  mb-4'></label>
+                                <input {...register("email", { required: true })} className=' mt-4 py-2 rounded ' placeholder='Email' type="email" name="email" id="" />
+                                
                                 {errors.email && <span>This field is required</span>}
 
                             </div>
                             <div className="form-control">
+                            <label className="label">
+                                    <span className="label-text">Password</span>
+                                </label>
 
                                 <input {...register("password", {
                                     required: true,
                                     minLength: 6,
                                     pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
-                                })} className='  py-2 rounded border-none outline-none ' placeholder='Password' type={show ? "text" : "password"} name="password" id="" />
+                                })} className='  py-2 rounded mt-4  ' placeholder='Password' type={show ? "text" : "password"} name="password" id="" />
 
                                 <p className=' ms-60 -mt-8  mb-6 text-2xl' onClick={() => setshow(!show)}> <small>
                                     {
@@ -113,12 +125,15 @@ const Register = () => {
 
 
                             <div className="form-control mt-12">
+                            <label className="label">
+                                    <span className="label-text">Conform password</span>
+                                </label>
 
                                 <input {...register("conform", {
                                     required: true,
                                     minLength: 6,
                                     pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
-                                })} className='  py-2 rounded border-none outline-none mb-6' placeholder='conform Password' type={show ? "text" : "password"} name="conform" id="" />
+                                })} className='  py-2 rounded  mb-6' placeholder='conform Password' type={show ? "text" : "password"} name="conform" id="" />
                                 
                                 <p className=' ms-60 -mt-14 mb-6 text-2xl' onClick={() => setshow(!show)}> <small>
                                     {
