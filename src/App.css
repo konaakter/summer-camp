@@ -4,3 +4,11 @@
   background-size: cover;
   
 }
+.bg1{
+  background-image: url('https://image.slidesdocs.com/responsive-images/background/outdoor-summer-natural-camp-vacation-powerpoint-background_3ddb273962__960_540.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  
+}
+

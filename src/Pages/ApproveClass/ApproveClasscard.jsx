@@ -56,7 +56,7 @@ const ApproveClasscard = ({ approveclass, refetch }) => {
                 confirmButtonText: 'Login now!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    
+                    navigate('/login', {state: {from: location}})
                 }
             })
         }
